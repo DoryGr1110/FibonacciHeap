@@ -3,8 +3,15 @@
  *
  * An implementation of a Fibonacci Heap over integers.
  */
-public class FibonacciHeap
-{
+public class FibonacciHeap {
+
+    private HeapNode firstNode;
+    private HeapNode minNode;
+    private int size;
+    private int markedCount;
+    private int treesCount;
+    static private int linksCount;
+    static private int cutsCount;
 
    /**
     * public boolean isEmpty()
@@ -14,7 +21,7 @@ public class FibonacciHeap
     */
     public boolean isEmpty()
     {
-    	return false; // should be replaced by student code
+    	return size == 0;
     }
 		
    /**
@@ -39,7 +46,7 @@ public class FibonacciHeap
     public void deleteMin()
     {
      	return; // should be replaced by student code
-     	
+
     }
 
    /**
@@ -50,7 +57,7 @@ public class FibonacciHeap
     */
     public HeapNode findMin()
     {
-    	return new HeapNode(678);// should be replaced by student code
+    	return minNode;
     } 
     
    /**
@@ -72,14 +79,14 @@ public class FibonacciHeap
     */
     public int size()
     {
-    	return -123; // should be replaced by student code
+    	return size;
     }
     	
     /**
     * public int[] countersRep()
     *
     * Return an array of counters. The i-th entry contains the number of trees of order i in the heap.
-    * (Note: The size of of the array depends on the maximum order of a tree.)  
+    * (Note: The size of the array depends on the maximum order of a tree.)
     * 
     */
     public int[] countersRep()
@@ -118,7 +125,7 @@ public class FibonacciHeap
     */
     public int nonMarked() 
     {    
-        return -232; // should be replaced by student code
+        return size - markedCounter;
     }
 
    /**
@@ -132,7 +139,7 @@ public class FibonacciHeap
     */
     public int potential() 
     {    
-        return -234; // should be replaced by student code
+        return treesCount + 2 * markedCount;
     }
 
    /**
@@ -145,7 +152,7 @@ public class FibonacciHeap
     */
     public static int totalLinks()
     {    
-    	return -345; // should be replaced by student code
+    	return linksCount;
     }
 
    /**
@@ -157,7 +164,7 @@ public class FibonacciHeap
     */
     public static int totalCuts()
     {    
-    	return -456; // should be replaced by student code
+    	return cutsCount;
     }
 
      /**
